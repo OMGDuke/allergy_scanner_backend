@@ -5,6 +5,9 @@ ruby '2.3.0'
 gem 'rails', '4.2.6'
 gem 'rails-api'
 gem 'pg'
+gem 'devise_token_auth'
+gem 'devise'
+gem 'omniauth'
 
 group :development, :test do
   gem 'byebug'
@@ -13,5 +16,5 @@ group :development, :test do
 end
 
 group :development do
-  gem 'spring'
+  # gem 'spring'
 end
