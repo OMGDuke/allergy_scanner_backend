@@ -8,6 +8,7 @@ gem 'pg'
 gem 'devise_token_auth'
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'
