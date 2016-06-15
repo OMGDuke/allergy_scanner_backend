@@ -9,6 +9,7 @@ gem 'devise_token_auth'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug'
