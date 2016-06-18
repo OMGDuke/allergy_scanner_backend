@@ -5,8 +5,8 @@ ruby '2.3.0'
 gem 'rails', '4.2.6'
 gem 'rails-api'
 gem 'pg'
-gem 'devise_token_auth'
-gem 'devise'
+gem 'devise_token_auth', github: "lynndylanhurley/devise_token_auth"
+gem 'devise', '~>4.1.1'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rack-cors', :require => 'rack/cors'
@@ -15,6 +15,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :development do
