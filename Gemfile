@@ -10,6 +10,7 @@ gem 'devise', '~>4.1.1'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug'

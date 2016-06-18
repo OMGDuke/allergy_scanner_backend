@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "DietProfiles", type: :request do
 
-  let(:nut_allergy_profile) { create :diet_profile }
   describe 'GET /diet_profiles' do
     it 'returns successfully' do
       get diet_profiles_path
@@ -10,9 +9,11 @@ RSpec.describe "DietProfiles", type: :request do
     end
 
     it 'returns all of the diet profiles' do
+      FactoryGirl.create_list :diet_profile, 5
       get diet_profiles_path
-      json = JSON.parse response.body
-      expect(json.length).to eq(1)
+      parsed_response = JSON.parse response.body
+      p parsed_response
+      expect(parsed_response.length).to eq(5)
     end
   end
 end
