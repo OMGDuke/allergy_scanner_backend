@@ -9,24 +9,21 @@ RSpec.describe "DietProfiles", type: :request do
     end
 
     context 'diet profiles exist' do
-      before { FactoryGirl.create_list :diet_profile, 5 }
+      before do
+        FactoryGirl.create_list :diet_profile, 5
+        get diet_profiles_path
+      end
 
       it 'returns all of the diet profiles' do
-        get diet_profiles_path
-        parsed_response = JSON.parse response.body
-        expect(parsed_response.length).to eq(5)
+        expect(parse_json_response.length).to eq(5)
       end
 
       it 'returns id' do
-        get diet_profiles_path
-        parsed_response = JSON.parse response.body
-        expect(parsed_response.first).to have_key 'id'
+        expect(parse_json_response.first).to have_key 'id'
       end
 
       it 'returns name' do
-        get diet_profiles_path
-        parsed_response = JSON.parse response.body
-        expect(parsed_response.first).to have_key 'name'
+        expect(parse_json_response.first).to have_key 'name'
       end
 
     end
