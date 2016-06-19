@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ingredients = Ingredient.create([
+  { name: 'Peanut' },
+  { name: 'Cashew' }
+])
+
+diet_profiles = DietProfile.create([
+  { name: 'Nut Allergy', ingredients: Ingredient.all.select { |i| i.name.in? ['Peanut', 'Cashew'] } }
+])
