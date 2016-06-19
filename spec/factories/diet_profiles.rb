@@ -1,6 +1,11 @@
 FactoryGirl.define do
+
+  sequence :name do |n|
+    "name#{n}"
+  end
+
   factory :diet_profile do
-    name 'Nut Allergy'
+    name
 
     factory :diet_profile_with_ingredients do
       transient do

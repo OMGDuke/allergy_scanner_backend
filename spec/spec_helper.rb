@@ -19,6 +19,24 @@
 RSpec.configure do |config|
   require 'factory_girl_rails'
   require 'support/request_helpers'
+  require 'shoulda-matchers'
+
+  Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    # Choose a test framework:
+    with.test_framework :rspec
+    # with.test_framework :minitest
+    # with.test_framework :minitest_4
+    # with.test_framework :test_unit
+
+    # Choose one or more libraries:
+    with.library :active_record
+    with.library :active_model
+    # with.library :action_controller
+    # Or, choose the following (which implies all of the above):
+    # with.library :rails
+  end
+end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -44,6 +62,7 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include Requests::JsonHelpers, type: :request
+
 
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.

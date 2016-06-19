@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :ingredient do
-    name 'Peanut'
+    name
     diet_profiles []
   end
 end
