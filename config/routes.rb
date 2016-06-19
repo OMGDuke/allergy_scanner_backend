@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-    omniauth_callbacks: 'devise_token_auth/omniauth_callbacks',
-    sessions:           'devise_token_auth/sessions'
+    omniauth_callbacks: 'user/omniauth_callbacks',
+    sessions:           'user/sessions'
 }
   
   # The priority is based upon order of creation: first created -> highest priority.
