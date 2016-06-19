@@ -17,10 +17,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'factory_girl_rails', '~> 4.0'
-  # gem 'shoulda'
   gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
-  # gem 'spring'
+  gem 'spring'
 end
