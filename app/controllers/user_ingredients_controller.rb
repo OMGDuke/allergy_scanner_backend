@@ -11,9 +11,9 @@ class UserIngredientsController < ApplicationController
       user_ingredients.each do |user_ingredient|
         user_ingredient.save
       end
-      render json: { success: 'Ingredients saved to user profile' }
+      render json: { message: 'Ingredients saved to user profile' }
     else
-      render json: { success: 'Ingredients not saved to user profile' }
+      render json: { error_message: 'Ingredients not saved to user profile' }, status: :bad_request
     end
 
   end
