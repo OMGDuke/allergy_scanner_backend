@@ -28,7 +28,6 @@ RSpec.describe "UserIngredients", type: :request do
       end
 
       it "returns a successful json string with success message" do
-        byebug
         post path, valid_request
         expect(response).to be_success
         expect(parse_json_response['success']).to eq 'Ingredients saved to user profile'
