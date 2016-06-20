@@ -33,7 +33,7 @@ RSpec.describe "UserIngredients", type: :request do
         expect(parse_json_response['success']).to eq 'Ingredients saved to user profile'
       end
 
-      it 'creates the record in the database' do
+      it 'creates the records in the database' do
         expect{ post path, valid_request }.to change{ UserIngredient.count }.by 5
       end
 
