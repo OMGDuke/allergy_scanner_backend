@@ -8,9 +8,12 @@
 
 ingredients = Ingredient.create([
   { name: 'Peanut' },
-  { name: 'Cashew' }
+  { name: 'Cashew' },
+  { name: 'Milk' },
+  { name: 'Cheese' }
 ])
 
 diet_profiles = DietProfile.create([
-  { name: 'Nut Allergy', ingredients: Ingredient.all.select { |i| i.name.in? ['Peanut', 'Cashew'] } }
+  { name: 'Nut Allergy', ingredients: Ingredient.all.select { |i| i.name.in? ['Peanut', 'Cashew'] } },
+  { name: 'Lactose Intolerant', ingredients: Ingredient.all.select { |i| i.name.in? ['Milk', 'Cheese'] } }
 ])
