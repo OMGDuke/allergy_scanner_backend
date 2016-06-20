@@ -26,6 +26,7 @@ RSpec.describe "UserIngredients", type: :request do
       end
 
       it 'creates the record in the database' do
+        # p valid_request
         expect{ post path, valid_request }.to change{ UserIngredient.count }.by 5
       end
 
