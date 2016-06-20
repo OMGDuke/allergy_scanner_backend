@@ -4,5 +4,7 @@ class UserIngredient < ActiveRecord::Base
   belongs_to :ingredient
 
   validates_uniqueness_of :ingredient_id, scope: :user_id
+  validates_presence_of :user_id
+  validates_presence_of :ingredient_id
 
 end
