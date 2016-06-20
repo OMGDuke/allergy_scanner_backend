@@ -27,21 +27,21 @@ ActiveRecord::Schema.define(version: 20160620100127) do
     t.integer "ingredient_id",   null: false
   end
 
-  create_table "ingredient_users", force: :cascade do |t|
-    t.integer  "ingredient_id"
-    t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "ingredient_users", ["ingredient_id"], name: "index_ingredient_users_on_ingredient_id", using: :btree
-  add_index "ingredient_users", ["user_id"], name: "index_ingredient_users_on_user_id", using: :btree
-
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "user_ingredients", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "ingredient_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "user_ingredients", ["ingredient_id"], name: "index_user_ingredients_on_ingredient_id", using: :btree
+  add_index "user_ingredients", ["user_id"], name: "index_user_ingredients_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false

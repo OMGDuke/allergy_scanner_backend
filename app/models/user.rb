@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :omniauthable
   include DeviseTokenAuth::Concerns::User
 
-  has_many :ingredient_users
-  has_many :ingredients, through: :ingredient_users
+  has_many :user_ingredients
+  has_many :ingredients, through: :user_ingredients
 end
