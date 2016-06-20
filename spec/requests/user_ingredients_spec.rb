@@ -5,7 +5,6 @@ RSpec.describe "UserIngredients", type: :request do
   let(:path) { '/user_ingredients' }
   let(:user) { FactoryGirl.create :user }
   let(:ingredients) { FactoryGirl.create_list :ingredient, 5 }
-  let(:ingredient_ids) { [] }
   let(:valid_request) do
       {
       user_id: user.id,
@@ -42,10 +41,6 @@ RSpec.describe "UserIngredients", type: :request do
 
 
     context 'correct format' do
-
-      before do
-        ingredients.each { |i| ingredient_ids.push i.id }
-      end
 
       it "returns a successful json string with success message" do
         post path, valid_request
