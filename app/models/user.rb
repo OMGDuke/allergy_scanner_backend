@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
-  has_many :user_ingredients
-  has_many :ingredients, through: :user_ingredients
+  has_and_belongs_to_many :ingredients
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

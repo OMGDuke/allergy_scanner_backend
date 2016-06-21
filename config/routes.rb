@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   resources :diet_profiles, only: [:index]
-  resources :user_ingredients, only: [:create]
+
+  resources :users, only: [] do
+    resources :ingredients, only: [:create, :index]
+  end
 
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {
     omniauth_callbacks: 'user/omniauth_callbacks',
