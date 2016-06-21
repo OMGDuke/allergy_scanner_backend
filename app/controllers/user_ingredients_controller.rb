@@ -5,6 +5,7 @@ class UserIngredientsController < ApplicationController
 
     params[:ingredients].uniq.each do |ingredient|
       user_ingredients << UserIngredient.new(user_id: params[:user_id], ingredient_id: ingredient[:id])
+    p UserIngredient.first
     end
 
     if all_user_ingredients_valid? user_ingredients
@@ -16,6 +17,12 @@ class UserIngredientsController < ApplicationController
       render json: { error_message: 'Ingredients not saved to user profile' }, status: :bad_request
     end
 
+  end
+
+  def index
+    user = User.find_by(id: params[:user_id])
+    p UserIngredient.first
+    render json: user.ingredients
   end
 
   private
