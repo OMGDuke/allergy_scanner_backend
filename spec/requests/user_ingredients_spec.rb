@@ -33,14 +33,16 @@ RSpec.describe "UserIngredients", type: :request do
     context 'correct format' do
 
       it "returns a successful json string with success message" do
+        p user
+        p user.ingredients.size
         post path, valid_request
         expect(response).to be_success
         expect(parse_json_response['message']).to eq 'Ingredients saved to user profile'
       end
 
-      # it 'creates the records in the database' do
-      #   expect{ post path, valid_request }.to change{ UserIngredient.count }.by 5
-      # end
+      it 'creates the records in the database' do
+        expect{ post path, valid_request }.to change{ user.ingredients.count }.by 5
+      end
 
     end
 
