@@ -36,16 +36,25 @@ RSpec.describe "UserIngredients", type: :request do
     let(:user) { FactoryGirl.create :user_with_ingredients }
     let(:path) { "/users/#{user.id}/ingredients" }
 
-    it "returns successfully" do
+    before do
       get path
+    end
+
+    it "returns successfully" do
       expect(response).to have_http_status 200
     end
 
     context 'user has ingredients saved' do
       it 'returns all of the users ingredients' do
-        get path
-        p parse_json_response
         expect(parse_json_response.length).to eq 5
+      end
+
+      it 'returns id' do
+        expect(parse_json_response.first).to have_key 'id'
+      end
+
+      it 'returns name' do
+        expect(parse_json_response.first).to have_key 'name'
       end
     end
   end
