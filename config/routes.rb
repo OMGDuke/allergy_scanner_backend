@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :diet_profiles, only: [:index]
 
   resources :users, only: [] do
-    resources :ingredients, only: [:create]
+    resources :ingredients, only: [:create, :index]
   end
 
   mount_devise_token_auth_for 'User', at: 'auth', controllers: {

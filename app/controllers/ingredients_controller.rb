@@ -1,4 +1,9 @@
 class IngredientsController < ApplicationController
+  def index
+    user = User.find_by(id: params[:user_id])
+    render json: user.ingredients
+  end
+
   def create
     user = User.find_by(id: params[:user_id])
     params[:ingredients].each do |i|
