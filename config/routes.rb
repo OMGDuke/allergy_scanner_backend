@@ -6,10 +6,7 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:create, :index]
   end
 
-  mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-    omniauth_callbacks: 'user/omniauth_callbacks',
-    sessions:           'user/sessions'
-  }
+  mount_devise_token_auth_for 'User', at: 'auth'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
