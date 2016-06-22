@@ -8,12 +8,45 @@
 
 ingredients = Ingredient.create([
   { name: 'Peanut' },
+  { name: 'Pecan' },
   { name: 'Cashew' },
+  { name: 'Walnut' },
+  { name: 'Chestnut' },
+  { name: 'Almond' },
+  { name: 'Brazil Nut' },
+  { name: 'Pine Nut' },
+  { name: 'Pistachio' },
+  { name: 'Macadamia' },
   { name: 'Milk' },
-  { name: 'Cheese' }
+  { name: 'Cream' }
+  { name: 'Ricotta' },
+  { name: 'Butter' },
+  { name: 'Fromage Frais' },
+  { name: 'Kefir' },
+  { name: 'Yoghurt' },
+  { name: 'Ice Cream' },
+  { name: 'Quark' },
+  { name: 'Philadelphia' },
+  { name: 'Cheese' },
+  { name: 'Mozzarella' },
+  { name: 'Bread' },
+  { name: 'Beer' },
+  { name: 'Couscous' },
+  { name: 'Soy Sauce' },
+  { name: 'Muffin' },
+  { name: 'Pancake' },
+  { name: 'Croissant' },
+  { name: 'Cereal' },
 ])
 
 diet_profiles = DietProfile.create([
-  { name: 'Nut Allergy', ingredients: Ingredient.all.select { |i| i.name.in? ['Peanut', 'Cashew'] } },
-  { name: 'Lactose Intolerant', ingredients: Ingredient.all.select { |i| i.name.in? ['Milk', 'Cheese'] } }
+  { name: 'Nut Allergy', ingredients: Ingredient.all.select { |i| i.name.in? ['Peanut', 'Pecan', 
+    'Cashew', 'Walnut', 'Chestnut', 'Almond', 'Brazil Nut', 'Pine Nut', 'Pistachio', 'Macadamia'] } },
+
+  { name: 'Lactose Intolerance', ingredients: Ingredient.all.select { |i| i.name.in? [
+    'Milk', 'Cream', 'Ricotta', 'Butter', 'Fromage Frais', 'Kefir', 'Yoghurt', 'Ice Cream', 
+    'Quark', 'Philadelphia', 'Cheese', 'Mozzarella'] } },
+
+  { name: 'Gluten Intolerance', ingredients: Ingredient.all.select { |i| i.name.in? [
+    'Bread', 'Beer', 'Couscous', 'Soy Sauce', 'Muffin', 'Pancake', 'Croissant', 'Cereal'] } }
 ])
