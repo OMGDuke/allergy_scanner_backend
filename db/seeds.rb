@@ -13,40 +13,41 @@ ingredients = Ingredient.create([
   { name: 'Walnut' },
   { name: 'Chestnut' },
   { name: 'Almond' },
-  { name: 'Brazil Nut' },
-  { name: 'Pine Nut' },
+  { name: 'Brazil' },
+  { name: 'Pine' },
   { name: 'Pistachio' },
   { name: 'Macadamia' },
+
+  { name: 'Lactose' },
   { name: 'Milk' },
-  { name: 'Cream' }
-  { name: 'Ricotta' },
-  { name: 'Butter' },
-  { name: 'Fromage Frais' },
-  { name: 'Kefir' },
-  { name: 'Yoghurt' },
-  { name: 'Ice Cream' },
-  { name: 'Quark' },
-  { name: 'Philadelphia' },
-  { name: 'Cheese' },
-  { name: 'Mozzarella' },
-  { name: 'Bread' },
-  { name: 'Beer' },
-  { name: 'Couscous' },
-  { name: 'Soy Sauce' },
-  { name: 'Muffin' },
-  { name: 'Pancake' },
-  { name: 'Croissant' },
-  { name: 'Cereal' },
+  { name: 'Whey' },
+
+  { name: 'Gluten' },
+  { name: 'Wheat' },
+  { name: 'Barley' },
+  { name: 'Oats' },
+
+  { name: 'Pork' },
+  { name: 'Chicken' },
+  { name: 'Beef' },
+  { name: 'Ox' },
+  { name: 'Turkey' },
+  { name: 'Goat' },
+  { name: 'Lamb' },
+  { name: 'Pigeon' },
+  { name: 'Pheasant' }
 ])
 
 diet_profiles = DietProfile.create([
   { name: 'Nut Allergy', ingredients: Ingredient.all.select { |i| i.name.in? ['Peanut', 'Pecan', 
-    'Cashew', 'Walnut', 'Chestnut', 'Almond', 'Brazil Nut', 'Pine Nut', 'Pistachio', 'Macadamia'] } },
+    'Cashew', 'Walnut', 'Chestnut', 'Almond', 'Brazil', 'Pine', 'Pistachio', 'Macadamia'] } },
 
   { name: 'Lactose Intolerance', ingredients: Ingredient.all.select { |i| i.name.in? [
-    'Milk', 'Cream', 'Ricotta', 'Butter', 'Fromage Frais', 'Kefir', 'Yoghurt', 'Ice Cream', 
-    'Quark', 'Philadelphia', 'Cheese', 'Mozzarella'] } },
+    'Lactose', 'Milk', 'Whey'] } },
 
   { name: 'Gluten Intolerance', ingredients: Ingredient.all.select { |i| i.name.in? [
-    'Bread', 'Beer', 'Couscous', 'Soy Sauce', 'Muffin', 'Pancake', 'Croissant', 'Cereal'] } }
+    'Gluten', 'Wheat', 'Barley', 'Oats'] } },
+
+  { name: 'Vegetarian', ingredients: Ingredient.all.select { |i| i.name.in? [
+    'Pork', 'Chicken', 'Beef', 'Ox', 'Turkey', 'Goat', 'Lamb', 'Pigeon', 'Pheasant'] } }    
 ])
