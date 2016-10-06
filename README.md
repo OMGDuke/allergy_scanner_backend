@@ -2,7 +2,7 @@
 
 Makers Academy Final Project
 ----------------------------
-This is the backend API for our [app](https://github.com/harrim91/allergy_scanner_frontend), designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
+This is the backend API for our [app](https://github.com/omgduke/allergy_scanner_frontend), designed to help people with food allergies or dietary requirements quickly know whether they can eat a certain food.
 
 User Stories
 ------------
@@ -32,7 +32,7 @@ I want to be able to use my Facebook account.
 
 Installation
 -------
-- Clone this repo `git clone git@github.com:harrim91/allergy_scanner_backend.git`
+- Clone this repo `git clone git@github.com:omgduke/allergy_scanner_backend.git`
 - Run bundle `bundle install`
 - Create your databases - `bin/rake db:create` and `bin/rake db:create RAILS_ENV=test`
 - Migrate your databases - `bin/rake db:migrate` and `bin/rake db:migrate RAILS_ENV=test`
